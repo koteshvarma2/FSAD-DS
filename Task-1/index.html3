@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>All-in-One Web Demo</title> 
+<style> 
+button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  animation: pulse 0.6s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+</style> 
+</head> 
+<body onload="pageLoaded()"> 
+<h2 id="title">FSAD</h2> 
+<div class="card"> 
+<h3>STUDENT REGISTRATION FORM</h3> 
+<form onsubmit="return validateForm()"> 
+Name:
+<input type="text" id="Name"><br> 
+Email: 
+<input type="text" id="Email"><br> 
+<button type="submit"> FORM SUBMIT</button> 
+</form> 
+</div> 
+<div class="card"> 
+
+    <h3>Rat</h3> 
+<button onclick="clickEvent()">Click</button> 
+<button ondblclick="doubleClickEvent()">Double Click</button> 
+<a href="https://github.com/koteshvarma2" target="_blank" rel="noopener" target="image">GitHub Profile</a>
+<p id="mouseMSG"></p> 
+</div> 
+<div class="card"> 
+
+    <h3>Text board</h3> 
+<input type="text" onkeyup="keyEvent()" placeholder="About you"> 
+<input type="integer" onkeyup="keyEvent()" placeholder="Number"
+<p id="keyMsg"></p> 
+</div> 
+<script> 
+let count = 0; 
+const course = "Full Stack";
+const pageLoaded = () => { 
+console.log("Page Loaded Successfully"); 
+}; 
+document.getElementById("title").style.color = "darkblue"; 
+function validateForm() { 
+let name = document.getElementById("name").value; 
+let email = document.getElementById("email").value; 
+if (name === "") { 
+alert("Name is required"); 
+return false; 
+} 
+if (!email.includes("@")) { 
+alert("Enter valid email"); 
+return false; 
+} 
+alert(`Welcome ${name} to ${course}`); 
+return true; 
+} 
+function clickEvent() { 
+document.getElementById("mouseMsg").innerHTML = 
+"Button clicked"; 
+} 
+function doubleClickEvent() { 
+document.getElementById("mouseMsg").innerHTML = 
+"Button double clicked"; 
+} 
+function keyEvent() { 
+count++; 
+document.getElementById("keyMsg").innerHTML = 
+"Keys pressed: " + count; 
+console.log("Key pressed"); 
+} 
+</script> 
+</body> 
+</html>
