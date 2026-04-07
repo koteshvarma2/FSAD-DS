@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini E-Commerce</title>
+</head>
+<body>
+  <h2>Products</h2>
+  
+  <button onclick="addCart(300)">Add Phone (₹300)</button>
+  <button onclick="addCart(700)">Add Laptop (₹700)</button>
+  <button onclick="addCart(150)">Add Headphones (₹150)</button>
+  
+  <p id="total">Total: 0</p>
+  
+  <script>
+    let total = 0;
+    function addCart(price) {
+      total += price;
+      document.getElementById("total").innerText = "Total: " + total;
+    }
+  </script>
+</body>
+</html>
