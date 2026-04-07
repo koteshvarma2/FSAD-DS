@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+<style>
+input, textarea {
+padding: 8px;
+margin: 5px;
+}
+.highlight {
+border: 2px solid blue;
+}
+</style>
+<script>
+function validateInput(event) {
+  let char = event.key;
+
+  if (!/^[a-zA-Z ]$/.test(char)) {
+    event.preventDefault();
+  }
+}
+
+function highlightField(element) {
+  element.classList.add("highlight");
+}
+
+function removeHighlight(element) {
+  element.classList.remove("highlight");
+}
+
+function submitForm() {
+  alert("Feedback submitted successfully!");
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Customer Feedback Form</h2>
+
+<form>
+
+ Name: <br>
+ <input type="text"
+        onkeypress="validateInput(event)"
+        onmouseover="highlightField(this)"
+        onmouseout="removeHighlight(this)">
+ <br>
+
+ Feedback: <br>
+ <textarea
+   onmouseover="highlightField(this)"
+   onmouseout="removeHighlight(this)">
+</textarea>
+<br>
+<button type="button" ondblclick="submitForm()">
+Submit (Double Click)
+</button>
+</form>
+</body>
+</html>
